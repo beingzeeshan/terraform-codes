@@ -1,0 +1,1 @@
+Here ypou can create an ec2 instance using variables and data poviders.
