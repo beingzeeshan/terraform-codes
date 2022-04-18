@@ -1,25 +1,25 @@
 # ========== IAM User Group ==========
 
-resource "aws_iam_group" "AdminGroup" {
-    name      = "AdminGroup"
+resource "aws_iam_group" "Admin" {
+    name      = "Admin"
 }
 
 resource "aws_iam_group" "Developer" {
     name      = "Developer"
 }
 
-resource "aws_iam_group" "devops-admin" {
-    name      = "devops-admin"
+resource "aws_iam_group" "Cloud-Engineer" {
+    name      = "Cloud-Engineer"
 }
 
-resource "aws_iam_group" "devops-readonly" {
-    name      = "devops-readonly"
+resource "aws_iam_group" "SRE" {
+    name      = "SRE"
 }
 
-resource "aws_iam_group" "quicksight-developer" {
-    name      = "quicksight-developer"
+resource "aws_iam_group" "QA" {
+    name      = "QA"
 }
 
-resource "aws_iam_group" "ryl-devops" {
-    name      = "devops"
+resource "aws_iam_group" "BA" {
+    name      = "BA"
 }

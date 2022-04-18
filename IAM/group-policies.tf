@@ -1,6 +1,6 @@
 # ========== IAM Group Policies ==========
 
-resource "aws_iam_group_policy_attachment" "AdminGroup" {
+resource "aws_iam_group_policy_attachment" "Admin" {
   for_each = toset([
     "arn:aws:iam::aws:policy/AdministratorAccess"
   ])
@@ -19,7 +19,7 @@ resource "aws_iam_group_policy_attachment" "Developer" {
   policy_arn = each.value
 }
 
-resource "aws_iam_group_policy_attachment" "devops-admin" {
+resource "aws_iam_group_policy_attachment" "Cloud-Engineer" {
   for_each = toset([
     "arn:aws:iam::account-no:policy/ec2-devops-admin",
     "arn:aws:iam::account-no:policy/quicksight-devops-admin",
@@ -31,7 +31,7 @@ resource "aws_iam_group_policy_attachment" "devops-admin" {
   policy_arn = each.value
 }
 
-resource "aws_iam_group_policy_attachment" "devops-readonly" {
+resource "aws_iam_group_policy_attachment" "SRE" {
   for_each = toset([
     "arn:aws:iam::account-no:policy/cloudwatch-readonly",
     "arn:aws:iam::account-no:policy/ec2-devops-read-only",
@@ -45,7 +45,7 @@ resource "aws_iam_group_policy_attachment" "devops-readonly" {
   policy_arn = each.value
 }
 
-resource "aws_iam_group_policy_attachment" "quicksight-developer" {
+resource "aws_iam_group_policy_attachment" "QA" {
   for_each = toset([
     "arn:aws:iam::account-no:policy/Assume-role-policy",
     "arn:aws:iam::account-no:policy/QuicksightIAMBasedAccessPolicy",
@@ -59,7 +59,7 @@ resource "aws_iam_group_policy_attachment" "quicksight-developer" {
   policy_arn = each.value
 }
 
-resource "aws_iam_group_policy_attachment" "ryl-devops" {
+resource "aws_iam_group_policy_attachment" "BA" {
   for_each = toset([
     "arn:aws:iam::account-no:policy/cloudwatch-ses-devops",
     "arn:aws:iam::account-no:policy/ec2-devops",
