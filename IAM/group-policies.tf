@@ -4,7 +4,7 @@ resource "aws_iam_group_policy_attachment" "Admin" {
   for_each = toset([
     "arn:aws:iam::aws:policy/AdministratorAccess"
   ])
-  group      = "${aws_iam_group.AdminGroup.name}"
+  group      = "${aws_iam_group.Admin.name}"
   policy_arn = each.value
 }
 
@@ -27,7 +27,7 @@ resource "aws_iam_group_policy_attachment" "Cloud-Engineer" {
     "arn:aws:iam::account-no:policy/s3-devops-admin",
     "arn:aws:iam::account-no:policy/ses-cloudwatch-devops-admin"
   ])
-  group      = "${aws_iam_group.devops-admin.name}"
+  group      = "${aws_iam_group.Cloud-Engineer.name}"
   policy_arn = each.value
 }
 
@@ -41,7 +41,7 @@ resource "aws_iam_group_policy_attachment" "SRE" {
     "arn:aws:iam::account-no:policy/ses-route53-quicksight-devops-read-only",
     "arn:aws:iam::aws:policy/IAMUserChangePassword"
   ])
-  group      = "${aws_iam_group.devops-readonly.name}"
+  group      = "${aws_iam_group.SRE.name}"
   policy_arn = each.value
 }
 
@@ -55,7 +55,7 @@ resource "aws_iam_group_policy_attachment" "QA" {
     "arn:aws:iam::aws:policy/service-role/AWSQuickSightDescribeRDS",
     "arn:aws:iam::aws:policy/service-role/AWSQuickSightSageMakerPolicy"
   ])
-  group      = "${aws_iam_group.quicksight-developer.name}"
+  group      = "${aws_iam_group.QA.name}"
   policy_arn = each.value
 }
 
@@ -68,6 +68,6 @@ resource "aws_iam_group_policy_attachment" "BA" {
     "arn:aws:iam::account-no:policy/s3-devops",
     "arn:aws:iam::aws:policy/IAMUserChangePassword"
   ])
-  group      = "${aws_iam_group.ryl-devops.name}"
+  group      = "${aws_iam_group.BA.name}"
   policy_arn = each.value
 }
