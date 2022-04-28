@@ -1,7 +1,3 @@
-#
-# Public IP
-#
-
 resource "azurerm_public_ip" "agw" {
   name                = "${local.prefix}-hub-agw1-pip1"
   location            = data.azurerm_resource_group.rg.location

@@ -1,8 +1,5 @@
-# - Variables
-# -
-
 locals {
-  prefix   = "dev"
+  prefix   = "prod"
   rg_name  = "mygroup1" #An existing Resource Group for the Application Gateway 
   sku_name = "Standard_v2" #Sku with WAF is : WAF_v2
   sku_tier = "Standard_v2"
